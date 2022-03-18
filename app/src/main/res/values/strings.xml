@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Курс валют</string>
+    <string name="updateText">Обновить</string>
+    <string name="textValue">Курс</string>
+    <string name="textNominal">Номинал</string>
+    <string name="textCharCode">Код</string>
+    <string name="textName">Валюта</string>
+    <string name="descriptionFabConverter">Открыть конвертер</string>
+    <string name="hiltAmountRubles">Введите сумму</string>
+    <string name="hintAmountValute">Сумма в валюте</string>
+    <string name="textAmountRubles">Сумма в рублях:</string>
+    <string name="textAmountValute">Вы получите:</string>
+    <string name="textRublesCode">RUB</string>
+    <string name="textValuteCode">VAL</string>
+    <string name="textValuteDescription">Курс</string>
+    <string name="cdImageViewUpDown">Изображение срелки роста/падения курса</string>
+</resources>
