@@ -23,15 +23,15 @@ class CurrencyListViewModel
     private val mError: MutableLiveData<String> = SingleLiveEvent()
     var prefsFirstRun: Boolean = currencyInteractor.prefsFirstRun
 
-    fun onSetPrefs(prefsValue: Boolean) {
-        currencyInteractor.onSetPrefsFirstRun(prefsValue)
-    }
-
     val currencyList
         get() = mCurrencyList
 
     val error: MutableLiveData<String>
         get() = mError
+
+    fun onSetPrefs(prefsValue: Boolean) {
+        currencyInteractor.onSetPrefsFirstRun(prefsValue)
+    }
 
     fun onGetCurrencyListDB(): LiveData<List<Currency>> {
         viewModelScope.launch {
