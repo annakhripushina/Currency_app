@@ -17,7 +17,20 @@ class CurrencyConverterViewModel @Inject constructor(
 
     fun onGetAmountValute(amountRubles: EditText): String {
         val amountRublesValue = amountRubles.text.toString().toDouble()
-        val currencyValue = (currencyItem.nominal * amountRublesValue) / currencyItem.value
+        return onComputationAmountValute(amountRublesValue)
+    }
+
+    fun onComputationCurrencyValue(nominal: Int, value: Double, amountRublesValue: Double): Double {
+        if (value != 0.0) {
+            return (nominal * amountRublesValue) / value
+        } else {
+            throw IllegalArgumentException("Value cannot be 0")
+        }
+    }
+
+    fun onComputationAmountValute(amountRublesValue: Double): String {
+        val currencyValue =
+            onComputationCurrencyValue(currencyItem.nominal, currencyItem.value, amountRublesValue)
         mAmountValute = BigDecimal(currencyValue).setScale(4, RoundingMode.HALF_EVEN).toString()
         return mAmountValute
     }
